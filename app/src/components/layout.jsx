@@ -2,6 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 
 import { rhythm, scale } from "../utils/typography"
+import Footer from "../components/footer"
 
 const Layout = ({ location, title, children }) => {
   const rootPath = `${__PATH_PREFIX__}/`
@@ -58,9 +59,7 @@ const Layout = ({ location, title, children }) => {
     >
       <header>{header}</header>
       <main>{children}</main>
-      <footer>
-        <a href="https://github.com/NWCalvank">github</a> | <a href="https://linkedin.com/NWCalvank">linkedin</a>
-      </footer>
+      <Footer/>
     </div>
   )
 }

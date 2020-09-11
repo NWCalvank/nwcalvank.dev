@@ -1,7 +1,7 @@
 ---
 title: Complete Guide to map
 date: "2020-06-10T22:12:03.284Z"
-description: "The gateway into Functional Programming."
+description: "The Functional Programming gateway drug."
 ---
 
 Iteration through a collection is one of the most common elements of a typical piece of software.

@@ -3,10 +3,10 @@ module.exports = {
     title: `nwcalvank.DEV`,
     author: {
       name: `Nathan Calvank`,
-      summary: `Just trying to seem more interesting than I really am.`,
+      summary: `I'm just trying to seem more interesting than I actually am.`,
     },
     description: `Another developer blog from a guy who spends too much time on the computer`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.app/`,
+    siteUrl: `https://nwcalvank.dev/`,
     social: {
       github: `nwcalvank`,
       instagram: `nwcalvank`,
