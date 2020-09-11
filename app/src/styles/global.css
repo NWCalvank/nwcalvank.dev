@@ -154,8 +154,6 @@ pre[data-line] {
 
 .gatsby-highlight {
   margin-bottom: 1.75rem;
-  margin-left: -1.3125rem;
-  margin-right: -1.3125rem;
   border-radius: 10px;
   background: #011627;
   -webkit-overflow-scrolling: touch;
@@ -174,7 +172,6 @@ pre[data-line] {
 }
 
 .line-numbers-rows {
-  line-height: 1.5rem;
   padding: 1.3125rem;
   border-right: none !important;
 }
