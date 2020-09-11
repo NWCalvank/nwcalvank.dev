@@ -26,5 +26,5 @@ jobs:
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws-region: ca-central-1
 
-    - name: Copy files to NWCalvank.ca with the AWS CLI
+    - name: Copy files to NWCalvank.dev with the AWS CLI
       run: make deploy
