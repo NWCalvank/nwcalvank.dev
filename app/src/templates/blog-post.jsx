@@ -43,9 +43,18 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
             marginBottom: rhythm(1),
           }}
         />
-        <footer>
-          <Bio />
-        </footer>
+        <h3>
+          <Link
+            style={{
+              boxShadow: "none",
+              textDecoration: "none",
+            }}
+            to={"/"}
+          >
+            nwcalvank.DEV
+          </Link>
+        </h3>
+        <Bio />
       </article>
 
       <nav>

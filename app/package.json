@@ -1,7 +1,7 @@
 {
   "name": "nwcalvank-dev",
   "private": true,
-  "description": "A starter for a blog powered by Gatsby and Markdown",
+  "description": "A developer blog powered by Gatsby and Markdown",
   "version": "0.1.0",
   "author": "Nathan Calvank <nwcalvank@gmail.com>",
   "dependencies": {

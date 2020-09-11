@@ -28,7 +28,7 @@ const Bio = () => {
             summary
           }
           social {
-            twitter
+            instagram
           }
         }
       }
@@ -57,11 +57,15 @@ const Bio = () => {
         }}
       />
       <p>
-        Written by <strong>{author.name}</strong> {author.summary}
-        {` `}
-        <a href={`https://twitter.com/${social.twitter}`}>
-          You should follow him on Twitter
-        </a>
+        A dev blog by{" "}
+        <a
+          href={`https://www.instagram.com/${social.instagram}/`}
+          target="_blank"
+          rel="noreferrer"
+        >
+          {author.name}.
+        </a>{" "}
+        {author.summary}
       </p>
     </div>
   )
