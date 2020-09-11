@@ -1,0 +1,13 @@
+{
+  "name": "nwcalvank",
+  "version": "1.0.0",
+  "description": "A static site deployed to NWCalvank.dev",
+  "scripts": {
+    "gatsby": "cd app && gatsby"
+  },
+  "author": "Nathan Calvank",
+  "license": "ISC",
+  "devDependencies": {
+    "gatsby": "^2.24.57"
+  }
+}
