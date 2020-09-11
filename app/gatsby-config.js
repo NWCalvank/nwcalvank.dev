@@ -12,6 +12,7 @@ module.exports = {
       instagram: `nwcalvank`,
       linkedin: `nwcalvank`,
       twitter: `nwcalvank`,
+      youtube: `nwcalvank`,
     },
   },
   plugins: [

@@ -1,6 +1,6 @@
 ---
 title: Complete Guide to filter
-date: "2020-06-17T22:12:03.284Z"
+date: "2020-06-17"
 description: "Only keep the data that sparks joy."
 ---
 

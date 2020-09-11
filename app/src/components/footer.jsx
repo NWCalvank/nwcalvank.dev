@@ -10,6 +10,7 @@ export default () => {
             github
             instagram
             linkedin
+            youtube
           }
         }
       }
@@ -21,7 +22,8 @@ export default () => {
     <footer>
       <a href={`https://github.com/${social.github}`}>github</a> |{" "}
       <a href={`https://linkedin.com/${social.linkedin}`}>linkedin</a> |{" "}
-      <a href={`https://instagram.com/${social.instagram}`}>instagram</a>
+      <a href={`https://instagram.com/${social.instagram}`}>instagram</a> |{" "}
+      <a href={`https://youtube.com/${social.youtube}`}>youtube</a>
     </footer>
   )
 }

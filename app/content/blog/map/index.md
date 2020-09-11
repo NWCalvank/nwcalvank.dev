@@ -1,6 +1,6 @@
 ---
 title: Complete Guide to map
-date: "2020-06-10T22:12:03.284Z"
+date: "2020-06-10"
 description: "The Functional Programming gateway drug."
 ---
 
