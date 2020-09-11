@@ -4,7 +4,7 @@ date: "2020-08-04"
 description: "So, apparently I’ve become a curmudgeon."
 ---
 
-## What is Optional Chaining
+# What is Optional Chaining
 
 [Optional Chaining](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining) is a new JavaScript language feature that allows a developer to access deeply-nested attributes from an object without the risk of throwing a runtime error by referencing an attribute on undefined.
 
@@ -29,7 +29,7 @@ So, what makes me so grumpy?
 
 Honestly, it’s probably more of a personality flaw … but I’ll blame optional chaining for the time being.
 
-## It’s Not That Bad
+# It’s Not That Bad
 
 Let’s begin by taking a look at the above example, without optional chaining.
 
@@ -54,7 +54,7 @@ In my eyes, this repetitive presence check can/should actually serve as a little
 
 I’ll use business logic here to refer to the logic that is related to the task at hand in each example (getting the height, in this case). We could imagine the rest of the application logic to include concerns such as data validation, error handling, framework-level boilerplate, and so on.
 
-## Ad Hominem Attack on the Syntax
+# Ad Hominem Attack on the Syntax
 
 Now, let’s take a look at a method invocation.
 
@@ -84,7 +84,7 @@ What I’m trying to argue here is that optional chaining betrays my intuitions 
 
 We have short-circuiting logical operators and ternaries to deal with this exact use-case.
 
-## Feel the Pain
+# Feel the Pain
 
 So far, I’ve largely argued that optional chaining is dumb “because I hate it,” but I’d like to give you a real reason.
 
@@ -154,7 +154,7 @@ In a real application, it’s unlikely that these data validation guards would l
 
 This not only declutters your code but also drastically simplifies your life as a developer. Knowing that properties and methods exist at the call site means that you don’t need to constantly be on-your-guard about classic JavaScript bottom type errors like “undefined is not a function.”
 
-## What About Default Values?
+# What About Default Values?
 
 Suppose that you’re an anarchist, and you wrote some code that looks like this:
 
@@ -192,7 +192,7 @@ Put simply, I have the same answer for setting defaults as I did for everything 
 
 **Footnote:** I would absolutely not recommend patching default values onto the object, as objects are passed by reference. This could lead to all sorts of confusing bugs. If an early exit doesn’t make sense, consider wrapping the object with a getter to safely return default values without modifying the original object.
 
-## That’s That
+# That’s That
 
 To summarize, is JavaScript’s optional chaining the most harmful thing since goto? No.
 

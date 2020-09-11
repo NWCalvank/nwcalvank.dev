@@ -14,7 +14,7 @@ Otherwise, I think you’re ready to rock and role (and rock and role and rock a
 
 ---
 
-### Topics Covered
+## Topics Covered
 
 - Basic Recursive Functions
 - Fibonacci – The Classic Recursive Function
@@ -23,9 +23,9 @@ Otherwise, I think you’re ready to rock and role (and rock and role and rock a
 - Top-Down vs Bottom-Up Implementations
 - Memoization
 
-## Basic Recursive Functions
+# Basic Recursive Functions
 
-### A Recursive Loop
+## A Recursive Loop
 
 Looping is one of the most integral programming principles. There are a number of common looping constructions, such as the for and while loops, but we can also loop recursively.
 
@@ -53,7 +53,7 @@ For a step-by-step explanation of building the recursive loop, check out the fir
 
 Once you have a good mental model of how a recursive loop is working, we can move on to recursive definitions.
 
-### A Recursive Definition
+## A Recursive Definition
 
 Something is recursive when it is defined in terms of itself. If that sounds a little crazy, that’s because it is!
 
@@ -147,7 +147,7 @@ const sum = ([x = 0, y = 0, ...ys]) => {
 
 Now, we can see how simple our logic really is. The only thing we have to set up outside of the recursive call is our base case, which tells the recursive function when to stop recursing.
 
-### The Base Case
+## The Base Case
 
 I would recommend that you always think about your base case early on when writing a recursive function. Not only does this help defend against infinite recursion but it also can help point the rest of your recursive logic in the right direction if you’re having a mental block.
 
@@ -179,7 +179,7 @@ In the case of implementing the sum function, I recognized that I could combine 
 
 By covering all of these potential inputs with our base case, we’re able to safely recurse for all larger inputs. How neat is that?
 
-## Fibonacci
+# Fibonacci
 
 Now that we’ve gotten our feet wet with a fairly simple recursive function, we can see how recursion could be used in place of an iterative (for loop) implementation.
 
@@ -246,7 +246,7 @@ One piece of advice I would have, for anyone struggling with this, is to try wri
 
 Remember: recursive logic does not change as the input grows. If you understand fib(1), fib(2), fib(3), and fib(4), you don’t also need to manually walk through each step of greater n values to understand what’s happening. The logic is the same; it just gets progressively more difficult for humans to understand. When it comes to computing larger inputs, I’d rather just leave it to the machines.
 
-## Memory Concerns
+# Memory Concerns
 
 Due to Tail Call Optimization being rejected from most JavaScript engines (I cry every time…), recursion is not as memory efficient as iterative solutions. This is the case for many popular languages, including Python.
 
@@ -270,9 +270,9 @@ That is bananas 🍌🍌
 
 We need to do better. Let’s discuss how we can.
 
-## Tail Call Optimization
+# Tail Call Optimization
 
-### Preface
+## Preface
 
 If your language of choice supports Tail Call Optimization (TCO) then proper tail calls are absolutely the first, and arguably best, way to solve the problem of a growing call stack.
 
@@ -282,7 +282,7 @@ Some languages that do support TCO include Haskell, Scheme, and Elixir.
 
 You’ll notice that the languages which support TCO are not terribly common. Honestly, if it weren’t for the ES2015 spec including TCO, I’m not sure that I would be discussing it here. But its inclusion in the ES spec normalizes the concept enough in my eyes that everyone interested in recursion should be aware of it.
 
-### What is TCO?
+## What is TCO?
 
 TCO is an optimization that leverages proper tail calls to avoid unnecessary call stack growth. We’ll begin by discussing what the optimization is, and then we’ll look at how you can implement a proper tail call in your own code.
 
@@ -333,7 +333,7 @@ Admittedly, I have not run into this as a legitimate problem when writing recurs
 
 Due to the way recursive logic works, it can generally be tested with small, easily-understood inputs. This logic then scales up without any noteworthy changes as the input grows in size and/or complexity. For this reason, I’m not currently convinced that retaining a full stack trace justifies rejecting TCO.
 
-### Tail Call Position
+## Tail Call Position
 
 Personally, even if the language that I’m working with doesn’t support TCO, I often find myself gravitating toward writing proper tail calls anyway. The times when I don’t is typically for the benefit of readability.
 
@@ -399,7 +399,7 @@ A function that does not use a proper tail call must retain the previous executi
 
 Phrased differently, tail call position is the syntactic location wherein the recursive function call will be the last thing to evaluate inside of the current execution context, such that the execution context could be destroyed as soon as the recursive function is added to the call stack.
 
-### Proper Tail Calls with Fibonacci
+## Proper Tail Calls with Fibonacci
 
 The nice thing about our sum function is that it is rather simple: a single recursive call makes understanding the basics of a proper tail call relatively straight forward. Let’s look now to our fib function, which throws an airbrush at our mental model.
 
@@ -440,7 +440,7 @@ So, we’ve now updated fib to use a proper tail call. To achieve this change, w
 
 With the state captured and passed along with each recursive call, we are able to destroy the previous execution context. In other words, the engine could now perform TCO, should the engine support it.
 
-## Top-Down vs Bottom-Up
+# Top-Down vs Bottom-Up
 
 The eagle-eyed among you may have noticed another effect of our new fib function. Instead of starting from n and recursing down to the base case, the new fib starts from 1 (the first Fibonacci number) and builds up to the nth value.
 
@@ -484,7 +484,7 @@ Sometimes, we may prefer a top-down solution. As we’ll see with memoization, a
 
 Notably, our bottom-up implementation doesn’t duplicate work within a single function call, but it will start over from n = 1 every time that we call it. Of course, these results could also be cached for future function invocations, giving us the same performance gains as a memoized top-down approach.
 
-## Memoization
+# Memoization
 
 Most simply, memoization is function-specific caching. To avoid redoing work, we’ll toss a previous function result into a cache, which we can reference later for a constant-time lookup.
 
@@ -546,7 +546,7 @@ That’s bananas! 🍌🍌 (but in a good way this time)
 
 ---
 
-## Thanks for Reading!
+# Thanks for Reading!
 
 This has been a general overview of recursion, explained through JavaScript examples. I hope you’ve found it useful and/or enjoyable, even if you don’t love recursion as much as I do.
 

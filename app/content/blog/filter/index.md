@@ -10,7 +10,7 @@ In many situations, though, we don’t want to operate on all of the users in ou
 
 As you might expect, this abstraction is commonly called `filter`.
 
-## Comparison to a for loop
+# Comparison to a for loop
 
 If you come from a more imperative programming background, you may be saying something like “why would I want a filter function for something that I can do with a standard for loop?”
 
@@ -92,7 +92,7 @@ This is compared with the for loops, which – while being quite easy to follow 
 
 This expressive way of communicating intent makes the life of future developers much easier because, even if there is a bug, we can more clearly see what the filter function is trying to do.
 
-## What is filter?
+# What is filter?
 
 filter is a higher-order function, which means that it can accept another function as an argument. In the case of filter, this function is called a predicate. In the examples above, we used a predicate function to remove all of the odd numbers from our collections.
 
@@ -145,7 +145,7 @@ As we can see, filter doesn’t know or care what predicate does to val or what 
 
 It’s possible to create a filter function that returns the correct collection type based on the input, but we’ll just assume a naive implementation strictly for Arrays/Lists here.
 
-## The Rules of filter
+# The Rules of filter
 
 These rules will be very familiar if you’ve read the Complete Guide to map. The map and filter functions have many things in common, with the only real difference being the decision of what to do with the new value that their input function creates. map passes the transformed value into the new collection, whereas filter passes the original value into the new collection if the transformed value was true.
 
@@ -167,7 +167,7 @@ This says, in a very succinct way, that the filter function accepts, as its firs
 
 Using these two inputs, filter then returns a new collection of the same type (f) that contains values of type a. If you give filter an Array of strings, you know that you will get back an Array of strings.
 
-## Filtering collections of collections
+# Filtering collections of collections
 
 So far, we have looked at examples where we removed all of the odd values from an collection. In the real world, we are often dealing with more complex data structures than arrays of numbers.
 
@@ -219,7 +219,7 @@ print(new_lists) # [[1], [5], [7, -3]]
 
 Hopefully it is very clear at this point that your ability to filter is only limited by your ability to provide the appropriate predicate, regardless of the data type you’re working with.
 
-## Chaining / Composition
+# Chaining / Composition
 
 Let’s return to our Star Wars example and imagine that we wanted a list of the male human characters. Your first thought might be to do something like this.
 
@@ -316,7 +316,7 @@ print(humanMales)
  # ]
 ```
 
-## Use with map
+# Use with map
 
 If you’ve read the Complete Guide to map, you will probably recognize the above performance optimization. As I’ve alluded to throughout this article, map and filter have many similarities. Separately, they can help us clearly and intuitively work with collections.
 
@@ -393,7 +393,7 @@ Hopefully, you’re able to see from these small examples how beneficial the map
 
 Again, yes, this can all be accomplished with a more imperative programming style, but these abstractions are useful for maximizing your code’s clarity, which allows you to more directly communicate your intentions to future developers.
 
-## Filtering on Custom Data Types
+# Filtering on Custom Data Types
 In the Complete Guide to map, we looked at Functors and implemented our own. Since different people learn in different ways, I thought that it might be useful to do the same thing here by building a custom data type that implements a filter function. We will then pass our custom data type through the isMaleHuman predicate to see the power and flexibility of leveraging these functional programming abstractions.
 
 We’ll make a simple, Array-like object with custom indexes. I promise it looks like a lot more than it really is.
@@ -490,7 +490,7 @@ Since we stuck with our Star Wars characters, the data type of each element hadn
 
 Hopefully, this example helps to further illustrate how filter works and maybe sparked some ideas in your head about how you could use it in your code as well.
 
-## Next up...
+# Next up...
 
 That’s it! You’ve mastered filter (maybe? kinda?).
 
