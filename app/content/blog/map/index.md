@@ -307,7 +307,7 @@ This data type ships with an implementation of map, which accepts a transformati
 
 Check out my video on this topic for an in-depth explanation and walk-through of creating Functors.
 
-[![Monad Mini-Series: Functors](https://img.youtube.com/vi/pgq-Pfg6ul4/0.jpg)](https://www.youtube.com/watch?v=pgq-Pfg6ul4)
+<iframe width="670" height="377" src="https://www.youtube.com/embed/pgq-Pfg6ul4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 To easily share code across multiple Functors in JavaScript, it helps to define a `map` function that circumvents the dot syntax.
 

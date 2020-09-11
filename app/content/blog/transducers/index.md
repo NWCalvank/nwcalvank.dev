@@ -10,7 +10,7 @@ With that said, you should have a strong working knowledge of map, filter, and r
 
 Now, if you prefer to learn through watching over reading, you can check out my video about transducers from a couple of years ago. This article goes into more intermediary steps, but the explanations are very similar.
 
-[![Transducers Explained | JavaScript](https://img.youtube.com/vi/SJjOp0X_MVA/0.jpg)](https://www.youtube.com/watch?v=SJjOp0X_MVA)
+<iframe width="670" height="377" src="https://www.youtube.com/embed/SJjOp0X_MVA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 I’ll likely re-record some of these older videos now that I have a better setup for my audio, but I think the concept is expressed reasonably well. You can get the code from that video [here](https://gist.github.com/NWCalvank/ec77b0c124f1048304cd8a08716a402f).
 
@@ -592,7 +592,7 @@ Just like that, our new data type has been transformed, filtered, and reduced by
 
 If you’d like to learn more about writing against an interface from a functional programming perspective, check out this little video that I made about the topic.
 
-[![Programming to an Interface](https://img.youtube.com/vi/-kuMXd_coW0/0.jpg)](https://www.youtube.com/watch?v=-kuMXd_coW0)
+<iframe width="670" height="377" src="https://www.youtube.com/embed/-kuMXd_coW0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## That’s it
 

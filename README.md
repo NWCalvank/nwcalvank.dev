@@ -8,7 +8,7 @@ My developer blog, using the Gatsby Starter Blog template and taking inspiration
 - [x] Convert basic React App to a blog
 - [ ] Populate blog
 - [ ] Hook up Google Analytics
-- [ ] Add remark YouTube video support
+- [x] Fix YouTube video support
 - [ ] Better code snippets
 - [ ] Use social icons
 - [ ] Setup client-side redirects for existing blog posts
