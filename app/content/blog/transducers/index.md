@@ -592,7 +592,7 @@ Just like that, our new data type has been transformed, filtered, and reduced by
 
 If you’d like to learn more about writing against an interface from a functional programming perspective, check out this little video that I made about the topic.
 
-[![Transducers Explained | JavaScript](https://img.youtube.com/vi/-kuMXd_coW0/0.jpg)](https://www.youtube.com/watch?v=-kuMXd_coW0)
+[![Programming to an Interface](https://img.youtube.com/vi/-kuMXd_coW0/0.jpg)](https://www.youtube.com/watch?v=-kuMXd_coW0)
 
 ## That’s it
 
