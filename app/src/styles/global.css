@@ -1,5 +1,18 @@
+h1 {
+  color: #007acc;
+}
+
+header h1 {
+  color: black;
+  font-size: 3rem;
+}
+
+header h3 {
+  color: #007acc;
+}
+
 /**
- * Based on copypasta from Remy Bach and Sarah Drasner
+ * Based on copypasta from Remy Bach and Sarah Drasner (via Dan Abramov)
  */
 code[class*='language-'],
 pre[class*='language-'] {

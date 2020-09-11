@@ -8,7 +8,7 @@ I’ll try to avoid getting too excited here, but the concept of “reducing” 
 
 I expect that this will be a long article, so get comfortable, maybe grab a snack, and let’s get down to brass tacks.
 
-## Prerequisites
+# Prerequisites
 
 I know. This isn’t school, and I won’t stop you from reading ahead if you’re not familiar with these topics already, but I would recommend that you make yourself comfortable with map and/or filter before diving into reduce.
 
@@ -22,7 +22,7 @@ With that said, if you already have a strong grasp of list iteration and higher-
 
 If you’re comfortable with recursion, you’ll be even better prepared.
 
-## The Concept of “Reducing”
+# The Concept of “Reducing”
 
 We’ll be building up reduce from a number of small, fairly simple concepts. The first is extraordinarily straightforward, though you have to wrap your mind around it in a broader sense than you may have up to this point.
 
@@ -72,7 +72,7 @@ mult(3,4) # 12
 
 I trust that you’re comfortable with the basic concept of combining two things into one new thing via a “reducer function” by now, so let’s expand into some more interesting examples.
 
-## Writing Reducer Functions
+# Writing Reducer Functions
 
 I’ll illustrate the breadth of potential use cases for reducer functions by running through a couple of fresh examples.
 
@@ -116,7 +116,7 @@ We don’t modify either input value directly. This is done intentionally.
 
 In an effort to leverage reduce in the most idiomatic way possible, I would recommend sticking with the foundational principles of Functional Programming, from which reduce/fold evolved. In this case, I’m referring to sticking with pure functions, which – by definition – return new values instead of modifying shared state.
 
-## Using reduce
+# Using reduce
 
 By this point, you’re probably irritated that we haven’t actually used reduce so far, so let’s change that!
 
@@ -153,7 +153,7 @@ In this way, it produces a rolling reduction of the list.
 
 Our invocations will look like this:
 
-### Step 1
+## Step 1
 
 1 is our first element in the list. Since it is an element in the list, it is passed as the second argument to our reducer function. Adding 0 and 1 gives us an accumulated value of 1. Don’t worry about understanding where the 0 came from right now. I will explain that shortly.
 
@@ -165,7 +165,7 @@ Our invocations will look like this:
 add(0, 1) # 1
 ```
 
-### Step 2
+## Step 2
 
 The reduce function takes the accumulated value and passes it to the reducer function. It also moves from the first element in the list to the second element. This element is 2, which is passed as the second argument to our reducer function. Adding 1 and 2 gives us our new accumulated value.
 
@@ -177,7 +177,7 @@ The reduce function takes the accumulated value and passes it to the reducer fun
 add(1, 2) # 3
 ```
 
-### Step 3
+## Step 3
 
 The current accumulated value is 3. So far, we’ve added the first two elements of the list. Next, reduce will once again pass the accumulated value to our reducer function. Since we’ve already handled the first two elements in the list, it will pass the third element in as the second argument.
 
@@ -189,7 +189,7 @@ The current accumulated value is 3. So far, we’ve added the first two elements
 add(3, 3) # 6
 ```
 
-### Step 4
+## Step 4
 
 We’ve added 1 + 2 + 3 to get an accumulated value of 6. The fourth element in the list is 4, so that is provided alongside the accumulated value to get the next accumulated value of 10.
 
@@ -201,7 +201,7 @@ We’ve added 1 + 2 + 3 to get an accumulated value of 6. The fourth element in 
 add(6, 4) # 10
 ```
 
-### And so on…
+## And so on…
 
 The pattern that you should start to notice now is:
 
@@ -209,7 +209,7 @@ The pattern that you should start to notice now is:
 new_accumulated_value = add(current_accumulated_value, current_value)
 ```
 
-### Step 10
+## Step 10
 
 This pattern continues through the list to the final invocation, where the accumulated value of all previous elements is combined with the last element to complete the reduction:
 
@@ -225,7 +225,7 @@ The above steps are the essence of how the reduce abstraction works. It is criti
 
 ---
 
-### About that Zero
+## About that Zero
 
 As promised, I’ll now explain where the zero comes from in our first invocation above.
 
@@ -241,7 +241,7 @@ We solve this problem by passing another argument to reduce. The first argument 
 
 We chose 0 as the initial value because it does not affect the sum of our list.
 
-## Sample reduce Implementation
+# Sample reduce Implementation
 
 For those who understand these concepts better through an implementation in code, below is a potential way that reduce could be implemented in Python. Please note that this is for illustrative purposes only.
 
@@ -295,15 +295,15 @@ This might be a bit tough to follow if you’re not familiar with recursion, but
 
 **Note:** You can also reduce from right-to-left instead of left-to-right. I’m using left-to-right here as it is probably more intuitive, but there are situations where it makes more sense to reduce/fold from right-to-left instead. In JavaScript, this is done with reduceRight and is available in Haskell with foldr.
 
-## Terminology
+# Terminology
 
 We used a few new terms in the previous sections, so I’d like to outline them explicitly here.
 
-### Reducer Function
+## Reducer Function
 
 The first argument to reduce. It knows how to take two values and combine them. It doesn’t know anything about the collection.
 
-### Initial Value
+## Initial Value
 
 The last argument to reduce. It is generally the “empty” value for the data type and function being reduced, but it could be any valid first argument to the reducer function. It will be combined with the first element in the input collection.
 
@@ -315,17 +315,17 @@ If you’re struggling to think of what your initial value should be, look at th
 
 > So, if you’re returning an integer from your reducer function but the first argument to the reducer function is a list, you’re going to have problems!
 
-### Accumulator
+## Accumulator
 
 The first argument to the reducer function. Its starting value is the initial value described above. For all future invocations of the reducer function, it is assigned to the return value of the previous invocation.
 
-## More Complex Reducer Functions
+# More Complex Reducer Functions
 
 Remember, a reducer function can be anything that knows how to combine two pieces of data. So, let’s get a little more creative and build our intuition about using reduce.
 
 Keep in mind, there is quite literally an innumerable number of ways that you could use reduce, so the examples below will be strictly used for building your intuitions about the abstraction and perhaps providing some inspiration for how you could use reduce in your own projects.
 
-### Build Dictionaries
+## Build Dictionaries
 
 We could imagine taking a list of (key, value) pairs and combining them into a dictionary. JavaScript, for example, has Object.fromEntries() baked into the language. Let’s do the same sort of thing in Python.
 
@@ -346,7 +346,7 @@ from_entries(entries) # {'name': 'Yoda', 'age': 900}
 
 I should note that idiomatic python prefers list and dictionary comprehensions over using reduce. I’m using Python to illustrate some of these examples because it is a very popular language.
 
-### Compose Booleans
+## Compose Booleans
 
 This is a fun one!
 
@@ -390,7 +390,7 @@ false || false -> false
 
 Notice how the left side (the initial value) doesn’t matter? The second value is always returned from the operation. This is why we chose the initial values that we did for any and all above.
 
-### Compose Functions
+## Compose Functions
 
 This one can be a little bit mind-bending if you haven’t seen something like it before, but it is one of my favourite (though rarely practical) uses for reduce.
 
@@ -438,7 +438,7 @@ Pretty neat, right?
 
 Notice that I used reduceRight? That’s due to the typical application order for functions in a compose. The right-most function is executed first, and the result is passed from right-to-left. A composition from left-to-right is commonly referred to as a pipe and could be implemented here by swapping out reduceRight with reduce.
 
-## Chaining and Composition
+# Chaining and Composition
 
 If you’re coming here from the map and filter guides then you were already expecting this section. Like those abstractions, reduce can be chained or composed with itself.
 
@@ -494,7 +494,7 @@ const sum = nums
 
 This ability to chain/compose map/filter/reduce is a big part of what makes them such a powerful set of abstractions. To my knowledge, it should be possible to perform any transformation that you could ever need to on a collection by using these three methods, assuming that the collection in question implements them.
 
-## Beyond reduce
+# Beyond reduce
 
 What I’ve covered in this article is a guide to the reduce abstraction, but there is more to the concepts of reducing, mapping, and filtering than what you’ve read about in the map, filter, and reduce guides.
 

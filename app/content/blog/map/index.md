@@ -20,7 +20,7 @@ These patterns have been abstracted into:
 
 In this post, we’ll be discussing `map`.
 
-## Why map?
+# Why map?
 
 Suppose that you have a simple function for incrementing numbers.
 
@@ -68,7 +68,7 @@ For example, the map function would be a perfect substitute for the for loop abo
 
 So, let’s learn about `map`.
 
-## What is map?
+# What is map?
 
 `map` is a higher-order function, which means that it accepts another function as one or more of its arguments. This allows map to provide a general pattern, without being implementation-specific.
 
@@ -130,7 +130,7 @@ def map(tf, col):
   return new_list
 ```
 
-## The Rules of map
+# The Rules of map
 
 Other than the shortened syntax, it might not be immediately clear why `map` is so useful when compared to a `for` loop. This is where the `map` rules come in:
 
@@ -160,7 +160,7 @@ For example, we could modify our examples above to return a list of booleans, in
 list(map(lambda x: x % 2 == 0, [1,2,3])) # [False, True, False]
 ```
 
-## Why this Matters
+# Why this Matters
 
 The benefit of map following a strict set of rules is that it clearly communicates the intention of this piece of code to the person who is reading it. Remember, we write code for humans to read!
 
@@ -213,7 +213,7 @@ print(nums) # [2,3,4,5,6]
 
 When used consistently across a codebase, map can quickly signal to future readers that the code here is pure, allowing a for loop to signal that the operation is likely impure.
 
-## Chaining / Composition
+# Chaining / Composition
 
 I would be remiss to not mention chaining or composition in an article about map. Chaining is a syntactic alteration of typical, Lisp-like composition, but they do the same thing in practice.
 
@@ -250,7 +250,7 @@ print(new_nums) # [3,4,5]
 
 Both of these examples are quite goofy, as you wouldn’t chain or compose the exact same function in two separate map calls, but it hopefully illustrates the point. The map rules make composition a natural consequence of collection transformation.
 
-## A Note on Performance
+# A Note on Performance
 
 It is important to note that a new collection is typically created in-memory between each map invocation, whether using chaining or Lisp-like syntax. I stay “typically” because compilers can sometimes recognize these common patterns and optimize for them, particularly if the types are easily inferred or explicitly provided.
 
@@ -284,7 +284,7 @@ bools = list(map(add1_is_even, [1,2,3]))
 print(bools) # [True, False, True]
 ```
 
-## Functors
+# Functors
 
 So far, we’ve been discussing map in terms of Arrays or Lists. This is because they are a common data type that falls into a larger category called “Functors.” Functors were briefly mentioned earlier in the Haskell type definition for fmap, but now it is time to discuss them more thoroughly.
 
@@ -342,7 +342,7 @@ As you can see, we created a shared function called add1ToAll which will accept 
 
 Our custom data type has safely and successfully passed through a function that appears to have been written for JavaScript Arrays. The add1ToAll function knows nothing about myFunctor‘s implementation of map, nor does add1. We have managed to ship a new data type without modifying any existing code. This is neat stuff!
 
-## That's the Basics
+# That's the Basics
 
 Thanks for reading! In this article, we covered map, which is one of the most fundamental concepts in Functional Programming. If this is your first exposure to Functional Programming, you may be surprised to hear that there’s more to the concept of mapping than I’ve outlined here.
 

@@ -14,7 +14,7 @@ And so, I present to you, a few of this nerd’s favourite algorithms 🤓
 
 **Caveat:** These are off the top of my head and are prone to recency bias. I’m not saying that these are the world’s greatest algorithms.
 
-## Boyer-Moore Voting Algorithm
+# Boyer-Moore Voting Algorithm
 
 This one is my reigning favourite due to its simplicity. It’s basically a little math problem that a grade schooler could easily understand, bottled up into a slick, tasty, little nugget of linear time complexity.
 
@@ -50,7 +50,7 @@ In addition to using linear time, this algorithm also uses constant space. My in
 
 The Boyer-Moore algorithm obviously solves a very specific problem, but it does it so well that I can’t help but appreciate it.
 
-## Tree Traversal
+# Tree Traversal
 
 Okay, so this one is arguably not a specific algorithm. In a way, it’s the opposite of the previous one. Instead of being used to solve a very specific problem, it can be used in a wide variety of domains.
 
@@ -58,7 +58,7 @@ A great thing about tree traversal is that it can be completely decoupled from t
 
 I’ll illustrate a few basic tree traversals here.
 
-### Binary Tree
+## Binary Tree
 
 Given the typical Leetcode `TreeNode`:
 
@@ -119,7 +119,7 @@ Oh yeah… Did I mentioned how much I love [recursion](/recursion)?
 
 I adore the fact that you can completely change the order in which the entire tree is explored just by changing the order in which you visit the nodes. Recursion takes care of the heavy lifting.
 
-### N-Ary Trees
+## N-Ary Trees
 
 Admittedly, I like this Breadth-First algorithm a lot less than the Depth-First ones above, but the processing queue is a useful pattern that I first learned from problems such as n-ary tree traversal, so I need to pay my respktz.
 
@@ -150,7 +150,7 @@ There isn’t much else to say about this algorithm. It benefits from using a no
 
 For these reasons, as well as the processing queue pattern, I would still consider it – while perhaps not a “favourite” per-say – a very important algorithm to keep in my brain.
 
-## Detect Linked List Cycle
+# Detect Linked List Cycle
 
 This is another algorithm that I love for its simplicity. While it’s great on its own, it is very specific. So, I’m picking it out here as a representative of a larger pattern that I reach for quite often: two pointers.
 
@@ -190,7 +190,7 @@ In the case of no end, the fast pointer will continue to cycle around until it h
 
 Easy peasy. 🍋
 
-## That’s it for Today
+# That’s it for Today
 
 You’ve probably noticed that these are all very simple algorithms. The most “complex” piece is probably the recursive logic within the tree traversals.
 

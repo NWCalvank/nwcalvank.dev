@@ -18,7 +18,7 @@ Final thing before I dive in, I would be remiss to not acknowledge the video tha
 
 Like with many brilliant thinkers, though, it is sometimes difficult for us mere mortals to follow his explanations. My goal with this article is to break everything down as clearly-as-possible for those who, like me, would benefit from a more explicit explanation of the concept.
 
-## The Problem to Solve
+# The Problem to Solve
 
 Suppose that we have an enormous data set. It’s so enormous that every iteration over the collection has a meaningful impact on our system. Our current pipeline looks like this:
 
@@ -88,9 +88,9 @@ If we could wrap our functions in the appropriate abstraction to indicate how th
 
 Transducers to the rescue!
 
-## The Essence of mapping & filtering
+# The Essence of mapping & filtering
 
-### Iterating with reduce
+## Iterating with reduce
 
 As I said at the very beginning of this article, transducers led me to rethink my understanding of map, filter, and reduce.
 
@@ -174,7 +174,7 @@ filterWithReduce(isOdd, nums) // [1,3,5,7,9]
 
 There is no logical difference between this implementation and the previous one, but this syntactic change may make the upcoming steps a bit clearer.
 
-### Extracting the Iteration
+## Extracting the Iteration
 
 So far, we’ve managed to re-implement map and filter via reduce, allowing reduce to handle the iteration, but we haven’t extracted the “essence” of these abstractions quite yet. Here’s what I mean…
 
@@ -223,7 +223,7 @@ We’ve managed to modify our functions ever so slightly to pull out the reduce 
 
 Because we call reduce on the nums array directly, we no longer need to pass it into our mapWithReduce or filterWithReduce functions. They actually don’t know anything about the collection at all… well, except for the call to concat. Perhaps that’s a hint of what else we can remove here?
 
-### Extracting the reducer function
+## Extracting the reducer function
 
 Notice that we’re now returning a reducer function from our mapWithReduce and filterWithReduce functions? By “reducer function,” I mean a function that takes two things and combines them in some way, where the first argument is of the same type as the return value.
 
@@ -286,7 +286,7 @@ So, what does this buy us? Well, it means that mapWithReduce and filterWithReduc
 
 It might not be clear yet, but we’ve almost solved our initial problem.
 
-## Composing Reducer Functions
+# Composing Reducer Functions
 
 First, let’s rename our mapWithReduce and filterWithReduce functions to something more appropriate.
 
@@ -471,7 +471,7 @@ If you’re comfortable with reduce, you’ll be able to picture how the rest of
 
 For real, though, how cool is that?
 
-## Transducers
+# Transducers
 
 You’ve now worked with transducers! We just didn’t call it that. If we wrap up our call site from above into a little transduce helper, things start to feel a little better.
 
@@ -518,7 +518,7 @@ In this example, the first element (1) is filtered out since it is not odd once 
 
 The second element becomes 3, which passes the predicate, is doubled to become 6, and then incremented to become 7 as the first element of the new array. This pattern holds for the rest of nums.
 
-## Agnostic to Data Structure
+# Agnostic to Data Structure
 
 A striking benefit of transducers that I haven’t even touched on yet is that they are easily reused across data structures, provided that the data type implements reduce, a “join” function/method, and a way of producing an empty/initial value.
 
@@ -594,7 +594,7 @@ If you’d like to learn more about writing against an interface from a function
 
 <iframe width="670" height="377" src="https://www.youtube.com/embed/-kuMXd_coW0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-## That’s it
+# That’s it
 
 Well, that’s all I have for you on this one.
 

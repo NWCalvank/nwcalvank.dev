@@ -12,7 +12,7 @@ The funny thing is that it’s such an obvious concept once it sinks in that I�
 
 Today, I’ll be attempting to travel back in time to a day when my brain did not yet understand how passing by-reference differed from passing by-value. We’ll be using simple examples to illustrate the point.
 
-## Passing Variables
+# Passing Variables
 
 Before we worry about how we’re passing something, we should quickly ensure that we’re all on the same page about what it means to “pass” something.
 
@@ -94,7 +94,7 @@ This happens because the name label is replaced with its value of “Nathan.”
 
 In summary, we passed “Nathan” into welcomeUser using the labels of userName and name. Neither of these knew what value they were going to hold when we wrote our original code. The values were determined when the program was run.
 
-## Pass By Value
+# Pass By Value
 
 At this point, everybody should be on the same page. If you weren’t comfortable with passing variables/arguments around before, hopefully you’re up to speed because it’s time to start teasing apart the difference between passing by-reference and passing by-value.
 
@@ -140,7 +140,7 @@ On line 2, you can think of bar receiving its own 42 to hold onto; it’s not sh
 
 Once again, this behaviour happens because numbers in JavaScript are passed by-value.
 
-## Pass By Reference
+# Pass By Reference
 
 As you might expect based on how I ended the previous section, passing by-reference allows multiple labels to share a value.
 
