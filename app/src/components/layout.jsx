@@ -59,7 +59,7 @@ const Layout = ({ location, title, children }) => {
     >
       <header>{header}</header>
       <main>{children}</main>
-      <Footer/>
+      <Footer />
     </div>
   )
 }
