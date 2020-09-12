@@ -147,7 +147,7 @@ It’s possible to create a filter function that returns the correct collection 
 
 # The Rules of filter
 
-These rules will be very familiar if you’ve read the Complete Guide to map. The map and filter functions have many things in common, with the only real difference being the decision of what to do with the new value that their input function creates. map passes the transformed value into the new collection, whereas filter passes the original value into the new collection if the transformed value was true.
+These rules will be very familiar if you’ve read the [Complete Guide to map](/map). The map and filter functions have many things in common, with the only real difference being the decision of what to do with the new value that their input function creates. map passes the transformed value into the new collection, whereas filter passes the original value into the new collection if the transformed value was true.
 
 The rules of filter:
 
@@ -318,7 +318,7 @@ print(humanMales)
 
 # Use with map
 
-If you’ve read the Complete Guide to map, you will probably recognize the above performance optimization. As I’ve alluded to throughout this article, map and filter have many similarities. Separately, they can help us clearly and intuitively work with collections.
+If you’ve read the [Complete Guide to map](/map), you will probably recognize the above performance optimization. As I’ve alluded to throughout this article, map and filter have many similarities. Separately, they can help us clearly and intuitively work with collections.
 
 But, because of these similarities, they can also be used together. Suppose that we only wanted the names of the male, human characters. How could we do it?
 
@@ -394,7 +394,7 @@ Hopefully, you’re able to see from these small examples how beneficial the map
 Again, yes, this can all be accomplished with a more imperative programming style, but these abstractions are useful for maximizing your code’s clarity, which allows you to more directly communicate your intentions to future developers.
 
 # Filtering on Custom Data Types
-In the Complete Guide to map, we looked at Functors and implemented our own. Since different people learn in different ways, I thought that it might be useful to do the same thing here by building a custom data type that implements a filter function. We will then pass our custom data type through the isMaleHuman predicate to see the power and flexibility of leveraging these functional programming abstractions.
+In the [Complete Guide to map](/map), we looked at Functors and implemented our own. Since different people learn in different ways, I thought that it might be useful to do the same thing here by building a custom data type that implements a filter function. We will then pass our custom data type through the isMaleHuman predicate to see the power and flexibility of leveraging these functional programming abstractions.
 
 We’ll make a simple, Array-like object with custom indexes. I promise it looks like a lot more than it really is.
 
@@ -496,4 +496,4 @@ That’s it! You’ve mastered filter (maybe? kinda?).
 
 Now, it’s time to either learn about transforming the values in a collection if you haven’t yet read the [Complete Guide to map](/map).
 
-If you already know why map is so rad, I’d suggest realizing the remarkable power of combining values in the Complete Guide to reduce.
+If you already know why map is so rad, I’d suggest realizing the remarkable power of combining values in the [Complete Guide to reduce](/reduce).

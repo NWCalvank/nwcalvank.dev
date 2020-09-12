@@ -16,12 +16,12 @@ Otherwise, I think you’re ready to rock and role (and rock and role and rock a
 
 ## Topics Covered
 
-- Basic Recursive Functions
-- Fibonacci – The Classic Recursive Function
-- Memory Concerns
-- Tail Call Optimization
-- Top-Down vs Bottom-Up Implementations
-- Memoization
+- [Basic Recursive Functions](#basic-recursive-functions)
+- [Fibonacci – The Classic Recursive Function](#fibonacci)
+- [Memory Concerns](#memory-concerns)
+- [Tail Call Optimization](#tail-call-optimization)
+- [Top-Down vs Bottom-Up Implementations](#top-down-vs-bottom-up)
+- [Memoization](#memoization)
 
 # Basic Recursive Functions
 

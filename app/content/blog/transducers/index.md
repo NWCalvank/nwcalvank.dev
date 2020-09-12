@@ -227,7 +227,7 @@ Because we call reduce on the nums array directly, we no longer need to pass it 
 
 Notice that we’re now returning a reducer function from our mapWithReduce and filterWithReduce functions? By “reducer function,” I mean a function that takes two things and combines them in some way, where the first argument is of the same type as the return value.
 
-These reducer functions are the type of function that can be passed to reduce as a way of reducing a collection. If this is not 100% clear, please check out the Complete Guide to reduce before going much further, even if it’s just a refresher for you.
+These reducer functions are the type of function that can be passed to reduce as a way of reducing a collection. If this is not 100% clear, please check out the [Complete Guide to reduce](/reduce) before going much further, even if it’s just a refresher for you.
 
 Well, the reducer function that we’re returning is actually using another reducer function internally to do the combining. Can you spot it?
 
