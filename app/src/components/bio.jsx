@@ -63,8 +63,8 @@ const Bio = () => {
           rel="noreferrer"
         >
           {author.name}
-        </a>.{" "}
-        {author.summary}
+        </a>
+        . {author.summary}
       </p>
     </div>
   )

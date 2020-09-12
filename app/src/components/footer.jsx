@@ -7,7 +7,9 @@ const SocialIcon = props => (
     style={{
       boxShadow: `none`,
     }}
-    href={`https://github.com/${props.username}`}
+    href={props.href}
+    target="_blank"
+    rel="noreferrer"
   >
     <Image
       fixed={props.icon}
@@ -72,21 +74,22 @@ export default () => {
       <SocialIcon
         icon={data.github.childImageSharp.fixed}
         username={social.github}
+        href={`https://github.com/${social.github}`}
         alt="NWCalvank Github"
       />
       <SocialIcon
         icon={data.linkedin.childImageSharp.fixed}
-        username={social.linkedin}
+        href={`https://linkedin.com/in/${social.linkedin}`}
         alt="NWCalvank LinkedIn"
       />
       <SocialIcon
         icon={data.instagram.childImageSharp.fixed}
-        username={social.instagram}
+        href={`https://instagram.com/${social.instagram}`}
         alt="NWCalvank Instagram"
       />
       <SocialIcon
         icon={data.youtube.childImageSharp.fixed}
-        username={social.youtube}
+        href={`https://youtube.com/c/${social.youtube}`}
         alt="NWCalvank YouTube"
       />
     </footer>
