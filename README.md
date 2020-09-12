@@ -10,7 +10,7 @@ My developer blog, using the Gatsby Starter Blog template and taking inspiration
 - [ ] Hook up Google Analytics
 - [x] Fix YouTube video support
 - [x] Better code snippets
-- [ ] Use social icons
+- [x] Use social icons
 - [x] Styles overhaul
 - [ ] Layout overhaul
 - [ ] Add Github Action and/or git hook for linting & formatting
