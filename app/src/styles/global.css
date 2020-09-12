@@ -11,6 +11,10 @@ header h3 {
   color: #007acc;
 }
 
+a {
+  box-shadow: none;
+}
+
 /**
  * Based on copypasta from Remy Bach and Sarah Drasner (via Dan Abramov)
  */
