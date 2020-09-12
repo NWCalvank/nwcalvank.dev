@@ -14,9 +14,9 @@ None of these are criticism of a for loop. They are wonderful largely because of
 
 These patterns have been abstracted into:
 
-- map
-- filter
-- reduce / fold
+- [map](/map)
+- [filter](/filter)
+- [reduce / fold](/reduce)
 
 In this post, we’ll be discussing `map`.
 
@@ -346,4 +346,4 @@ Our custom data type has safely and successfully passed through a function that 
 
 Thanks for reading! In this article, we covered map, which is one of the most fundamental concepts in Functional Programming. If this is your first exposure to Functional Programming, you may be surprised to hear that there’s more to the concept of mapping than I’ve outlined here.
 
-For example, there are powerful optimization patterns called transducers, which I will outline in a future article. map is an excellent first step into these patterns, so if you’re just getting started, you’ve chosen a good place to begin. Next, I’d encourage you to learn about filter and reduce to see how those can be used alongside map to create powerful compositions from simple pieces.
+For example, there are powerful optimization patterns called transducers, which I will outline in a future article. map is an excellent first step into these patterns, so if you’re just getting started, you’ve chosen a good place to begin. Next, I’d encourage you to learn about [filter](/filter) and [reduce](/reduce) to see how those can be used alongside map to create powerful compositions from simple pieces.
