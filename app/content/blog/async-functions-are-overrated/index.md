@@ -4,13 +4,11 @@ date: "2020-09-13"
 description: "At the very least, they don't replace Promise chains."
 ---
 
-Before sitting down to write this, I wanted to confirm my suspicions that people are fond of saying that "async/await replaces Promises." Turns out, [they are](https://dev.to/gafi/7-reasons-to-always-use-async-await-over-plain-promises-tutorial-4ej9?ref=hackernoon.com).
-
-Ever since the `async/await` syntax was introduced to the EcmaScript spec, I've had my reservations about it. I think it is a useful abstraction for a couple of very specific problems, but it is otherwise overrated.
+Ever since the `async/await` syntax was introduced to the ECMAScript spec, I've had my reservations about it. I think it is a useful abstraction for a couple of very specific problems, but it is otherwise overrated.
 
 Today, I'd like to share with you the places where I actually use async functions and why I don't use them more often.
 
-Please note, this is not a deep dive on Promises. I'm currently working on a Complete Guide to Promises, but that's going to be a lot of work, and it's not done yet. In the meantime, you could check out this presentation that I gave to my coworkers in 2019 about async JS if you need to brush up on the topic.
+Please note, this is not a deep dive on Promises. If you're looking for a more complete explanation of Promises and JavaScript's async model, you could check out this presentation that I gave to my coworkers in 2019 about async JS.
 
 <iframe width="1280" height="720" src="https://www.youtube.com/embed/Wd1QTl74qJE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
@@ -478,4 +476,4 @@ This control flow could be tough to manage without the appropriate use of Promis
 
 I just think that they're over-hyped and should only be used where appropriate, leaving the control flow largely to dot-chaining.
 
-Thanks for reading. Hit me up on social if you want to tell me why I'm wrong. 🤓
+Thanks for reading! Have yourself a great day 🤓
