@@ -1,19 +1,26 @@
 # NWCalvank.dev
 
-My developer blog, using the Gatsby Starter Blog template and taking inspiration from Dan Abramov's [overreacted](https://overreacted.io/).
+My developer blog, using the Gatsby Starter Blog template and taking
+inspiration from Dan Abramov's [overreacted](https://overreacted.io/).
 
-## TODO
-- [x] Copy everything over from NWCalvank.ca
-- [x] Get it deployed to test domain
-- [x] Convert basic React App to a blog
-- [x] Populate blog
-- [ ] Hook up Google Analytics - Pending. We'll see if it worked.
-- [x] Fix YouTube video support
-- [x] Better code snippets
-- [x] Use social icons
-- [x] Styles overhaul
-- [ ] Layout overhaul
-- [ ] Add Github Action and/or git hook for linting & formatting
-- [x] Replace favicon
-- [ ] Add categories (and maybe tags?)
-- [ ] Add RSS feed
+## Prerequisites
+
+- Node.js LTS (just don't use v13 and you should be fine)
+
+## Getting Started
+
+```
+$ make setup
+$ make run
+```
+
+Navigate to http://localhost:8000/ to see the blog.
+
+## Making Your Own Blog
+
+This repo is living in the house that Gatsby built. All I've really added are
+the blog posts and a little bit of logic to automatically deploy to a
+pre-configured S3 bucket on AWS.
+
+I'd prefer that you don't rip off all of my blog posts, but feel free to take
+whatever else you find valuable from this repo.
