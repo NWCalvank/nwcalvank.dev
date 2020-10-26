@@ -32,7 +32,7 @@ jobs:
           aws-region: ca-central-1
 
       - name: Deploy
-          uses: jonelantha/gatsby-s3-action@v1
-          with:
-            dest-s3-bucket: nwcalvank.dev
-            cloudfront-id-to-invalidate: EL17OVML2MU5Z
+        uses: jonelantha/gatsby-s3-action@v1
+        with:
+          dest-s3-bucket: nwcalvank.dev
+          cloudfront-id-to-invalidate: EL17OVML2MU5Z
