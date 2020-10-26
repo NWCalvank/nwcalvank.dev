@@ -1,15 +1,14 @@
 build:
 	cd app && npm run build
 
-deploy:
-	aws s3 sync --delete --cache-control 'max-age=604800' --exclude index.html ./app/public/ s3://nwcalvank.dev/
-	aws s3 sync --cache-control 'no-cache' ./app/public/ s3://nwcalvank.dev/
+clean:
+	cd app && npm run clean
 
 run:
 	cd app && npm run start
 
 setup:
-	cd app && npm install
+	cd app && npm ci
 
 test-unit:
 	cd app && npm run test -- --watchAll=false
