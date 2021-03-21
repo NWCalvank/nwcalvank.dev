@@ -208,7 +208,7 @@ In general, a language with more syntax is going to be harder to manage than a l
 
 Remember, opinions can change. After all, it took me 6 months to stop hating TypeScript.
 
-But I encourage you to leave your opinions below. Tell me where I’ve gone wrong here.
+But I encourage you to track me down on social media and tell me why I'm wrong if you disagree.
 
 In the meantime, I’ll keep my eyes on that pattern matching proposal… Make good choices, TC39.
 
