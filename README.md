@@ -1,11 +1,10 @@
 # NWCalvank.dev
 
-My developer blog, using the Gatsby Starter Blog template and taking
-inspiration from Dan Abramov's [overreacted](https://overreacted.io/).
+My developer blog with almost no content. And crappy styling.
 
 ## Prerequisites
 
-- Node.js LTS (just don't use v13 and you should be fine)
+- Node.js LTS
 
 ## Getting Started
 
