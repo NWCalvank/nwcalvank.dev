@@ -25,32 +25,25 @@ const SocialIcon = props => (
 export default () => {
   const data = useStaticQuery(graphql`
     query FooterQuery {
-      github: file(absolutePath: { regex: "/light/GitHub-Mark-64px.png/" }) {
+      github: file(absolutePath: { regex: "/dark/GitHub-Mark-Light-64px.png/" }) {
         childImageSharp {
-          fixed(height: 32) {
+          fixed(height: 24) {
             ...GatsbyImageSharpFixed
           }
         }
       }
       linkedin: file(
-        absolutePath: { regex: "/light/linkedin-logo-black.png/" }
+        absolutePath: { regex: "/dark/linkedin-logo-white.png/" }
       ) {
         childImageSharp {
-          fixed(height: 32) {
+          fixed(height: 24) {
             ...GatsbyImageSharpFixed
           }
         }
       }
-      instagram: file(absolutePath: { regex: "/light/instagram-logo.png/" }) {
+      youtube: file(absolutePath: { regex: "/dark/yt_icon_mono_dark.png/" }) {
         childImageSharp {
-          fixed(height: 32) {
-            ...GatsbyImageSharpFixed
-          }
-        }
-      }
-      youtube: file(absolutePath: { regex: "/light/yt_icon_mono_light.png/" }) {
-        childImageSharp {
-          fixed(height: 32) {
+          fixed(height: 24) {
             ...GatsbyImageSharpFixed
           }
         }
@@ -81,11 +74,6 @@ export default () => {
         icon={data.linkedin.childImageSharp.fixed}
         href={`https://linkedin.com/in/${social.linkedin}`}
         alt="NWCalvank LinkedIn"
-      />
-      <SocialIcon
-        icon={data.instagram.childImageSharp.fixed}
-        href={`https://instagram.com/${social.instagram}`}
-        alt="NWCalvank Instagram"
       />
       <SocialIcon
         icon={data.youtube.childImageSharp.fixed}

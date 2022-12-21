@@ -1,9 +1,18 @@
+body {
+  background: #121212;
+  color: white;
+}
+
+blockquote {
+  color: #9999;
+}
+
 h1 {
   color: #007acc;
 }
 
 header h1 {
-  color: black;
+  color: white;
   font-size: 3rem;
 }
 
