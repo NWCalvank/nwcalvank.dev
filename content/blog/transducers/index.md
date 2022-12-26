@@ -730,6 +730,30 @@ As we already knew from our custom datatype, our transducer only knows about num
 
 For bonus points, we even combined the sum and concat usages into a single iteration.
 
+And, if you wanted to do something with each result after it was processed (without waiting for the stream to close), you could even wrap your reducer function with a side-effect:
+```js
+const logAndConcat = (acc, val) => {
+    console.log("Current:", val)
+    return concat(acc, val)
+}
+
+transduce(xform, logAndConcat, [], asyncStream2).then(x => {
+    console.log("Processed stream result:", x)
+})
+```
+
+Output:
+```
+Opening streams...
+Current: 7
+Current: 11
+Current: 15
+Current: 19
+Current: 23
+Closing streams...
+Processed stream result: [ 7, 11, 15, 19, 23 ]
+```
+
 So many possibilities!
 
 # That’s it
