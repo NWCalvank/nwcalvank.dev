@@ -594,6 +594,144 @@ If you’d like to learn more about writing against an interface from a function
 
 <iframe width="670" height="377" src="https://www.youtube.com/embed/-kuMXd_coW0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
+# Asynchronous Collections
+
+So, we now know that we can create an arbitrary datatype and use our existing transducer, so long as the datatype implements reduce. But let's face it, wrapping an Array is boring.
+
+What if we could create something like a stream, where values are provided over time? If it implemented reduce, could our existing transducer also transform, filter, and reduce it?
+
+
+You bet!
+
+But let's start with a simple, synchronous version first...
+```js
+const streamGen = function* () {
+    let val = 0
+    while (val <= 10) {
+        yield ++val
+    }
+}
+
+// Hack the prototype chain because we don't play by the rules
+streamGen.prototype.reduce = function (f, init) {
+    let acc = init
+    for (const val of this) {
+        acc = f(acc, val)
+    }
+    return acc
+}
+```
+
+With this toy version of a stream, represented by a simple and synchronous generator, we can try transducing it.
+```js
+// Return accumulated sum
+const stream = streamGen()
+console.log(transduce(xform, add, 0, stream)) // 75
+
+// Return Array of streamed values
+const stream2 = streamGen()
+console.log(transduce(xform, concat, [], stream2)) // [ 7 , 11, 15, 19, 23 ]
+```
+
+Great! So, our transducer works with a generator, which we can pretend is a stream of values from an API or something.
+
+To do that, we just have to make it asynchronous. We can refactor reduce to use Promises and to resolve each value after 50ms:
+```js
+streamGen.prototype.reduce = function (f, acc) {
+    let pollingId = undefined
+
+    // Return Promise to handle async resolution
+    return new Promise((resolve, _) => {
+        // Recursive loop to leverage async interval callback
+        const _poll = f => {
+            // Pull next value from generator
+            const val = this.next().value
+            if (val !== undefined) {
+                // Process the value if one exists
+                acc = f(acc, val)
+            } else {
+                // Otherwise, return the final value & exit iteration
+                resolve(acc)
+                clearInterval(pollingId)
+            }
+
+            // Start polling generator
+            if (pollingId === undefined) {
+                const id = setInterval(() => {
+                    _poll(f)
+                }, 50)
+                pollingId = id
+            }
+        }
+
+        // Initialize iteration over generator
+        _poll(f)
+    })
+}
+```
+
+Yes, the above is very messy, but it's also pretty cool, and it does do what we want!
+
+We just need to update the callsite to handle the "stream" lifescycles and to expect Promises:
+```js
+console.log("Opening streams...")
+const stream = streamGen()
+const stream2 = streamGen()
+const stream3 = streamGen()
+
+setTimeout(() => {
+    console.log("Closing streams...")
+    stream.return()
+    stream2.return()
+    stream3.return()
+}, 500)
+
+// Process stream and aggregate sum
+transduce(xform, add, 0, stream).then(x => {
+    console.log("Processed stream result:", x)
+})
+
+// Process stream and aggregate into single Array
+transduce(xform, concat, [], stream2).then(x => {
+    console.log("Processed stream result:", x)
+})
+
+// Aggregrate Sum & Array in One Iteration
+
+// Wrap add & concat in a reducer function
+const addAndConcat = ([accSum, accList], val) => [
+    add(accSum, val),
+    concat(accList, val),
+]
+
+transduce(xform, addAndConcat, [0, []], stream3).then(([x, y]) => {
+    console.log("Processed stream sum:", x)
+    console.log("Processed stream list:", y)
+})
+```
+
+Let's see our output:
+```
+Opening streams...
+Closing streams...
+Processed stream result: 75
+Processed stream result: [ 7, 11, 15, 19, 23 ]
+Processed stream sum: 75
+Processed stream list: [ 7, 11, 15, 19, 23 ]
+```
+
+How cool is that!?
+
+We haven't modified our transducer at all. It's the same one that we originally wrote to work with Arrays of numbers, but now it's working with an asynchronous stream of numbers.
+
+Of course, this makes sense, right?
+
+As we already knew from our custom datatype, our transducer only knows about numbers. It doesn't know anything about the collection that stores those numbers.
+
+For bonus points, we even combined the sum and concat usages into a single iteration.
+
+So many possibilities!
+
 # That’s it
 
 Well, that’s all I have for you on this one.
@@ -653,6 +791,72 @@ transduce(xform, add, 0, newNums)
 transduce(xform, add, 0, nums)
 transduce(xform, concat, dataStructure.of(), newNums)
 transduce(xform, concat, [], nums)
+
+// Asynchronous "Stream" (aka generator)
+const streamGen = function* () {
+    let val = 0
+    while (val <= 10) {
+        yield ++val
+    }
+}
+
+streamGen.prototype.reduce = function (f, acc) {
+    let pollingId = undefined
+
+    // Return Promise to handle async resolution
+    return new Promise((resolve, _) => {
+        // Recursive loop to leverage async interval callback
+        const _poll = f => {
+            // Pull next value from generator
+            const val = this.next().value
+            if (val !== undefined) {
+                // Process the value if one exists
+                acc = f(acc, val)
+            } else {
+                // Otherwise, return the final value & exit iteration
+                resolve(acc)
+                clearInterval(pollingId)
+            }
+
+            // Start polling generator
+            if (pollingId === undefined) {
+                const id = setInterval(() => {
+                    _poll(f)
+                }, 50)
+                pollingId = id
+            }
+        }
+
+        // Initialize iteration over generator
+        _poll(f)
+    })
+}
+
+const stream = streamGen()
+const stream2 = streamGen()
+const stream3 = streamGen()
+
+setTimeout(() => {
+    stream.return()
+    stream2.return()
+    stream3.return()
+}, 500)
+
+// Process stream and aggregate sum
+transduce(xform, add, 0, stream).then(x => {})
+
+// Process stream and aggregate into single Array
+transduce(xform, concat, [], stream2).then(x => {})
+
+// Aggregrate Sum & Array in One Iteration
+
+// Wrap add & concat in a reducer function
+const addAndConcat = ([accSum, accList], val) => [
+    add(accSum, val),
+    concat(accList, val),
+]
+
+transduce(xform, addAndConcat, [0, []], stream3).then(([x, y]) => {})
 ```
 
 Transducers are really neat, and I love the way that they encourage me to think about data manipulation. Despite the fact that I may never have a proper use case for them in my work, I think I’m better off for having taken the time to understand them.
