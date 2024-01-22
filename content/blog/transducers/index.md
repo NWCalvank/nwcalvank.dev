@@ -1,7 +1,7 @@
----
-title: Complete Guide to Transducers
-date: "2020-07-01"
-description: "The coolest abstraction that I'll never need to use."
+# Complete Guide to Transducers
+
+**July 1st, 2020**
+
 ---
 
 If you’re an aspiring functional programmer looking to level-up, I think transducers are your best bet. Building my understanding of transducers led me to totally rethink my perspective on map, filter, and reduce. Though transducers are an incredibly interesting abstraction, they’re not necessarily easy to understand. But once you get it, it all clicks.
