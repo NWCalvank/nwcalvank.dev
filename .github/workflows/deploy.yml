@@ -1,5 +1,6 @@
 name: Deploy
 on:
+  workflow_dispatch: {}
   push:
     branches:
       - master
@@ -13,14 +14,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: Setup Node
-        uses: actions/setup-node@v3
-        with:
-          node-version: lts/iron
-
-      - name: Install Dependencies
-        run: npm ci
-
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
@@ -31,4 +24,4 @@ jobs:
       - name: Deploy
         run: |
           aws s3 sync ./content/blog s3://nwcalvank.dev --delete &&\
-          aws cloudfront create-invalidation --distribution-id EL17OVML2MU5Z
+          aws cloudfront create-invalidation --distribution-id EL17OVML2MU5Z --paths "/*"
