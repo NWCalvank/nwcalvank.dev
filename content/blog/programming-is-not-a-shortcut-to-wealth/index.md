@@ -1,7 +1,7 @@
----
-title: Programming is not a Shortcut to Wealth
-date: "2020-10-25"
-description: "Specifically, if you want it to be."
+# Programming is not a Shortcut to Wealth
+
+**October 25th, 2020**
+
 ---
 
 __Warning:__ What follows is basically just a rant about people who get into Software Development for the "wrong" reasons, complain a bunch, and don't contribute much.

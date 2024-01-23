@@ -1,7 +1,7 @@
----
-title: Pass by Value vs Reference
-date: "2020-09-02"
-description: "Once you get it, you get it."
+# Pass by Value vs Reference
+
+**September 2nd, 2020**
+
 ---
 
 There are a few key programming concepts that can be tough to wrap your mind around early on. For some people, it’s asynchronous code. For others, it may be [recursion](/recursion). For me, for whatever reason, I struggled to fully understand the difference between pass-by-reference and pass-by-value.

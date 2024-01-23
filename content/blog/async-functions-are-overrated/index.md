@@ -1,7 +1,7 @@
----
-title: JavaScript's async Functions are Overrated
-date: "2020-09-13"
-description: "At the very least, they don't replace Promise chains."
+# JavaScript's async Functions are Overrated
+
+**September 13th, 2020**
+
 ---
 
 Ever since the `async/await` syntax was introduced to the ECMAScript spec, I've had my reservations about it. I think it is a useful abstraction for a couple of very specific problems, but it is otherwise overrated.

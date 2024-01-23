@@ -1,7 +1,7 @@
----
-title: Complete Guide to Recursion
-date: "2020-07-24"
-description: "I have an unnatural love of recursion."
+# Complete Guide to Recursion
+
+**July 24th, 2020**
+
 ---
 
 Recursion is one of the more powerful and important principles in programming. In this post, we’ll build up our understanding of recursion from ground-zero in preparation for more advanced concepts, such as recursive data structures and mutual recursion.

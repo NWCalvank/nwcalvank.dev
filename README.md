@@ -2,17 +2,22 @@
 
 My developer blog with almost no content. And crappy styling.
 
-## Prerequisites
-
-- Node.js LTS
+The content is written in Markdown, and uses
+[zero-md](https://github.com/zerodevx/zero-md) for runtime Markdown-to-HTML.
 
 ## Getting Started
 
+If you have [serve](https://www.npmjs.com/package/serve) installed, simply run:
+
+```
+serve
+```
+
+Otherwise:
+
 ```
 $ npm ci
-$ npm run start
+$ npm start
 ```
 
-Navigate to http://localhost:8000/ to see the blog.
-
-For all other info, get out the [Gatsby docs](https://www.gatsbyjs.com/docs).
+Navigate to http://localhost:3000/ to see the blog.

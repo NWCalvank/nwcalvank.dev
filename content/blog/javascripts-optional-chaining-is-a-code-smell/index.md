@@ -1,7 +1,7 @@
----
-title: JavaScript's Optional Chaining is a Code Smell 
-date: "2020-08-04"
-description: "So, apparently I’ve become a curmudgeon."
+# JavaScript's Optional Chaining is a Code Smell
+
+**August 4th, 2020**
+
 ---
 
 # What is Optional Chaining

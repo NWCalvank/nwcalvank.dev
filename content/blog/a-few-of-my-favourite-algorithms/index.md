@@ -1,7 +1,7 @@
----
-title: A Few of My Favourite Algorithms
-date: "2020-08-23"
-description: "I'm even nerdier than I thought."
+# A Few of My Favourite Algorithms
+
+**August 23rd, 2020**
+
 ---
 
 There comes a time in every nerd’s life when he realizes that he is, in fact, even nerdier than he thought.

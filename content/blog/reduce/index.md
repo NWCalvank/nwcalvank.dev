@@ -1,7 +1,7 @@
----
-title: Complete Guide to reduce
-date: "2020-06-26"
-description: "The one abstraction to rule them all."
+# Complete Guide to reduce
+
+**June 26th, 2020**
+
 ---
 
 I’ll try to avoid getting too excited here, but the concept of “reducing” or “folding” over a collection is one of my favourites in all of programming. The wild versatility of this abstraction is honestly difficult to overstate.

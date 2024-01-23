@@ -1,7 +1,7 @@
----
-title: Complete Guide to filter
-date: "2020-06-17"
-description: "Only keep the data that sparks joy."
+# Complete Guide to filter
+
+**June 17th, 2020**
+
 ---
 
 We use a variety of collections to store our data in the programs that we write. There may be a list of users returned from a database query or a dictionary to represent a person’s address.

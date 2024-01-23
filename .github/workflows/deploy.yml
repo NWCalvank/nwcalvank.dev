@@ -13,16 +13,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: Use Node.js 18
+      - name: Setup Node
         uses: actions/setup-node@v3
         with:
-          node-version: 18
+          node-version: lts/iron
 
       - name: Install Dependencies
         run: npm ci
-
-      - name: Build
-        run: npm run build
 
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
@@ -32,7 +29,6 @@ jobs:
           aws-region: ca-central-1
 
       - name: Deploy
-        uses: jonelantha/gatsby-s3-action@v1
-        with:
-          dest-s3-bucket: nwcalvank.dev
-          cloudfront-id-to-invalidate: EL17OVML2MU5Z
+        run: |
+          aws s3 sync ./content/blog s3://nwcalvank.dev --delete &&\
+          aws cloudfront create-invalidation --distribution-id EL17OVML2MU5Z
