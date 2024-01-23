@@ -1,15 +1,11 @@
-name: Deploy
+name: Invalidate CDN
 on:
   workflow_dispatch: {}
-  push:
-    branches:
-      - master
 
 jobs:
-  shipit:
-    name: Shipit
+  invalidate:
+    name: Invalidate CloudFront Distribution
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -21,6 +17,6 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ca-central-1
 
-      - name: Deploy
+      - name: Invalidate CloudFront Distribution
         run: |
-          aws s3 sync ./content/blog s3://nwcalvank.dev --delete
+          aws cloudfront create-invalidation --distribution-id EL17OVML2MU5Z --paths "/*"
