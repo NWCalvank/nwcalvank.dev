@@ -23,18 +23,18 @@ template.innerHTML = `
     }
 </style>
 
-<a id="link" class="link">
-    <div class="card">
+<article>
+    <a id="link" class="link card">
         <h2 class="title"><slot name="title">MISSING TITLE</slot></h2>
         <p id="date" class="date"></p>
         <p class="description"><slot name="description">MISSING DESCRIPTION</slot></p>
-    </div>
-</a>
+    </a>
+</article>
 `;
 
 class Preview extends HTMLElement {
     static get observedAttributes() {
-        return [ "date", "link", "title"];
+        return ["date", "link", "title"];
     }
 
     constructor() {
@@ -45,7 +45,7 @@ class Preview extends HTMLElement {
         this.date = this.shadowRoot.getElementById("date");
         this.link = this.shadowRoot.getElementById("link");
         this.title = this.shadowRoot.getElementById("title");
-    } 
+    }
 
     attributeChangedCallback(attr, oldVal, newVal) {
         if (oldVal === newVal) return;
@@ -63,7 +63,7 @@ class Preview extends HTMLElement {
     }
 
     connectedCallback() {
-    if (!this.getAttribute("date")) {
+        if (!this.getAttribute("date")) {
             this.setAttribute("date", "Just Now");
         }
         if (!this.getAttribute("link")) {

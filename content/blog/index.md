@@ -1,19 +1,19 @@
-# nwcalvank.dev
+<style>
+  .markdown-body h1 {
+    border-bottom: none;
+  }
 
-## Latest Podcast Episode
+  @media (prefers-color-scheme: dark) {
+    h1, h2 {
+      color: #fff;
+    }
 
-<div style="margin: 1rem 2rem">
-    <iframe
-      style="border-radius: 12px"
-      src="https://open.spotify.com/embed/show/5Z0Nuyrg1QeGYfTQLnWDSq?utm_source=generator&theme=0"
-      width="100%"
-      height="152"
-      frameborder="0"
-      allowfullscreen=""
-      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-      loading="lazy"
-    ></iframe>
-</div>
+    .markdown-body {
+      color-scheme: dark;
+    }
+</style>
+
+# NWCalvank.dev
 
 ## Complete Guides
 
