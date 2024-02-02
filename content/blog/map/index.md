@@ -1,3 +1,18 @@
+<style>
+  .markdown-body h1 {
+    border-bottom: none;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    h1, h2, p, li {
+      color: #fff;
+    }
+
+    .markdown-body {
+      color-scheme: dark;
+    }
+</style>
+
 # Complete Guide to map
 
 **June 10th, 2020**
