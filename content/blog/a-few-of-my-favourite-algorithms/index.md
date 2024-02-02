@@ -1,3 +1,18 @@
+<style>
+  .markdown-body h1 {
+    border-bottom: none;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    h1, h2, p, li {
+      color: #fff;
+    }
+
+    .markdown-body {
+      color-scheme: dark;
+    }
+</style>
+
 # A Few of My Favourite Algorithms
 
 **August 23rd, 2020**

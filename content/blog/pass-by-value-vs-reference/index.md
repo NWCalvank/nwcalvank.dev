@@ -1,3 +1,18 @@
+<style>
+  .markdown-body h1 {
+    border-bottom: none;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    h1, h2, p, li {
+      color: #fff;
+    }
+
+    .markdown-body {
+      color-scheme: dark;
+    }
+</style>
+
 # Pass by Value vs Reference
 
 **September 2nd, 2020**
