@@ -3,8 +3,12 @@
     border-bottom: none;
   }
 
+  .markdown-body #nwcalvankdev a:hover  {
+    text-decoration: none;
+  }
+
   @media (prefers-color-scheme: dark) {
-    h1, h2, p, li {
+    h1, h2, p, li, #nwcalvankdev a {
       color: #fff;
     }
 
@@ -12,6 +16,8 @@
       color-scheme: dark;
     }
 </style>
+
+# [NWCalvank.dev](/)
 
 # JavaScript's async Functions are Overrated
 
