@@ -10,4 +10,4 @@ The content is written in Markdown, and uses Jekyll for static site rendering.
 docker compose up
 ```
 
-Navigate to 0.0.0.0:4000 to see the blog.
+Navigate to http://localhost:3000/ to see the blog.
