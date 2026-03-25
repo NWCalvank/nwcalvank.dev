@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>{{page.title}}</title> 
+        <!-- Pico CSS -->
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.zinc.min.css"
+        />
+        <!-- Styles -->
+        <script>
+            // Prevent flash of unstyled content by setting the initial theme
+            const storedTheme = localStorage.getItem("theme");
+            const systemPrefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+            // Determine the initial theme
+            if (storedTheme) {
+                // If a theme is stored in localStorage (from the toggle), use that
+                document.documentElement.setAttribute("data-theme", storedTheme);
+            } else if (systemPrefersDark) {
+                // If no theme is stored and system prefers dark, set to dark
+                document.documentElement.setAttribute("data-theme", "dark");
+            } else {
+                // Otherwise (no stored theme, system prefers light), default to light
+                document.documentElement.setAttribute("data-theme", "light");
+            }
+        </script>
+        <!-- Custom Scripts  -->
+        <script type="module" src="/assets/scripts/preview.js"></script>
+    </head>
+    <body>
+        {% include nav.html %}
+
+        <main class="container">{{ content }}</main>
+
+        {% include footer.html %}
+    </body>
+</html>

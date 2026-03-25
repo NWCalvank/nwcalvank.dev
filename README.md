@@ -2,22 +2,12 @@
 
 My developer blog with almost no content. And crappy styling.
 
-The content is written in Markdown, and uses
-[zero-md](https://github.com/zerodevx/zero-md) for runtime Markdown-to-HTML.
+The content is written in Markdown, and uses Jekyll for static site rendering.
 
 ## Getting Started
 
-If you have [serve](https://www.npmjs.com/package/serve) installed, simply run:
-
 ```
-serve
+docker compose up
 ```
 
-Otherwise:
-
-```
-$ npm ci
-$ npm start
-```
-
-Navigate to http://localhost:3000/ to see the blog.
+Navigate to 0.0.0.0:4000 to see the blog.
