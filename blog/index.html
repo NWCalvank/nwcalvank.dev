@@ -5,20 +5,24 @@ title: NWCalvank.dev
 
 <h2>Complete Guides</h2>
 
-{% for post in site.posts %}
-    {% if post.categories contains "complete" %}
-        <blog-post-preview link="{{post.url}}" date="{{post.date | date: "%B %-d, %Y" }}">
-            <span slot="title">{{post.title}}</span>
-            <span slot="description">{{post.excerpt}}</span>
-        </blog-post-preview>
-    {% endif %}
-{% endfor %}
+{% for post in site.posts %} {% if post.categories contains "complete" %}
+<blog-post-preview
+  link="{{post.url}}"
+  date="{{post.date | date: '%B %-d, %Y' }}"
+>
+  <span slot="title">{{post.title}}</span>
+  <span slot="description">{{post.excerpt}}</span>
+</blog-post-preview>
+{% endif %} {% endfor %}
 
 <h2>All Posts</h2>
 
 {% for post in site.posts %}
-<blog-post-preview link="{{post.url}}" date="{{post.date | date: "%B %-d, %Y" }}">
-    <span slot="title">{{post.title}}</span>
-    <span slot="description">{{post.excerpt}}</span>
+<blog-post-preview
+  link="{{post.url}}"
+  date="{{post.date | date: '%B %-d, %Y' }}"
+>
+  <span slot="title">{{post.title}}</span>
+  <span slot="description">{{post.excerpt}}</span>
 </blog-post-preview>
 {% endfor %}

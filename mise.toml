@@ -1,0 +1,5 @@
+[tools]
+prettier = "3.8.1"
+
+[tasks]
+format = "prettier --write ."

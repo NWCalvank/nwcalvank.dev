@@ -1,18 +1,18 @@
 networks:
-    internal_net:
-        driver: bridge
+  internal_net:
+    driver: bridge
 
 services:
-    blog:
-        build:
-            context: .
-            dockerfile: Dockerfile.blog
-        container_name: nwcalvank.blog
-        restart: always
-        working_dir: /site
-        ports:
-            - "4000:4000"
-        volumes:
-            - ./blog:/site
-        networks:
-            - internal_net
+  blog:
+    build:
+      context: .
+      dockerfile: Dockerfile.blog
+    container_name: nwcalvank.blog
+    restart: always
+    working_dir: /site
+    ports:
+      - "4000:4000"
+    volumes:
+      - ./blog:/site
+    networks:
+      - internal_net
