@@ -1,0 +1,49 @@
+---
+layout: default
+title: NWCalvank.dev
+---
+
+<style>
+  .card {
+    display: block;
+    background-color: aliceblue;
+    padding: 1.5rem 2rem;
+  }
+  .date {
+    color: darkslategrey;
+    font-weight: 700;
+  }
+  .description {
+    color: darkslategrey;
+  }
+  .link {
+    text-decoration: none;
+  }
+  .title {
+    color: dodgerblue;
+  }
+</style>
+
+<h2>Complete Guides</h2>
+
+{% for post in site.posts %} {% if post.categories contains "complete" %}
+<a class="link" href="{{post.url}}">
+  <article class="card">
+    <h3 class="title">{{post.title}}</h3>
+    <p class="date">{{post.date | date: '%B %-d, %Y' }}</p>
+    <p class="description">{{post.excerpt}}</p>
+  </article>
+</a>
+{% endif %} {% endfor %}
+
+<h2>All Posts</h2>
+
+{% for post in site.posts %}
+<a class="link" href="{{post.url}}">
+  <article class="card">
+    <h3 class="title">{{post.title}}</h3>
+    <p class="date">{{post.date | date: '%B %-d, %Y' }}</p>
+    <p class="description">{{post.excerpt}}</p>
+  </article>
+</a>
+{% endfor %}
